@@ -1,5 +1,29 @@
 function indexOfIgnoreCase(s1, s2) {
   // write your code here
+	s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
+
+    if (s2.length === 0) {
+        return 0;
+    }
+
+    for (let i = 0; i <= s1.length - s2.length; i++) {
+        let found = true;
+
+        for (let j = 0; j < s2.length; j++) {
+            if (s1[i + j] !== s2[j]) {
+                found = false;
+                break;
+            }
+        }
+
+        if (found) {
+            return i;
+        }
+    }
+
+    return -1;
+	
 }
 
 // Please do not change the code below
